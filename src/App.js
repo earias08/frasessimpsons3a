@@ -23,9 +23,12 @@ function App() {
     const resultado = await respuesta.json();
     console.log(respuesta);
     console.log(resultado[0]);
-    // guardar objeto dentro del state
-    setPersonaje(resultado[0]);
-    setCargando(false);
+
+    setTimeout(() => {
+      // guardar objeto dentro del state
+      setPersonaje(resultado[0]);
+      setCargando(false);
+    }, 3000);
   };
 
   // operador ternario (condicion) ? (lo que quiero hacer si la condicion es verdadera) : (lo que quiero que haga si la condicion es falsa)
@@ -52,9 +55,7 @@ function App() {
           Obtener frase
         </Button>
       </article>
-      {
-        mostrarComponente
-      }
+      {mostrarComponente}
     </section>
   );
 }
